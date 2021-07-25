@@ -24,7 +24,7 @@ class Issue extends Model
         return $this->belongsToMany(Component::class);
     }
 
-    public function timelog()
+    public function timelogs()
     {
         return $this->hasMany(Timelog::class);
     }

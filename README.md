@@ -12,7 +12,7 @@ Clone o repositório
 
 Navegue até a pasta do projeto:
 
-    cd .\agily-larave
+    cd .\agily-laravel
 
 Faça a instalação das dependencias PHP com o comando:
 
@@ -40,7 +40,13 @@ Agora você pode acessar o servidor em http: // localhost: 8000
 
 ## Populando banco de dados
 
-Preencha os dados para das tabelas timelogs, users, components e issues.Execute o comando:
+Crie um banco de dados e adicione as informações no arquivo de variáveis de ambiente (.env).
+
+    DB_DATABASE=NOME_DO_BANCO_DE_DADOS
+    DB_USERNAME=USUARIO
+    DB_PASSWORD=SENHA
+
+Preencha os dados para das tabelas timelogs, users, components e issues. Execute o comando:
 
     php artisan db:seed
 
@@ -49,25 +55,14 @@ Preencha os dados para das tabelas timelogs, users, components e issues.Execute 
 ### Pastas
 
 - `app` - Contém todos os modelos Eloquent
-- `app` - Contains all the Eloquent models
 - `app/Http/Controllers` - Contém todos os controladores da aplicação
 - `app/Models` - Contém todos os modelos/entidades da aplicação
 - `config` - Contém todos os arquivos de configuração do aplicativo
 - `database/migrations` - Contém todas as migrações de banco de dados
 - `database/seeds` - Contém o semeador de banco de dados
-- `routes/view` - Contém todas as views da aplicação
-- `routes` - Contém todas as rotas api definidas no arquivo api.php
+- `resources/views` - Contém todas as views da aplicação
+- `routes` - Contém todas as rotas definidas no arquivo web.php
 
 ### Variáveis de ambiente
 
 - `.env` - As variáveis ​​de ambiente podem ser definidas neste arquivo
-
-### API para uso local e testes
-
-Execute o servidor de desenvolvimento laravel:
-
-    php artisan serve
-
-A API agora pode ser acessada em:
-
-    http://localhost:8000/api

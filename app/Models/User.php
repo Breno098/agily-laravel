@@ -30,6 +30,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'created_at', 
+        'updated_at', 
+        'email_verified_at'
     ];
 
     /**
@@ -40,4 +43,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function timelogs()
+    {
+        return $this->hasMany(Timelog::class);
+    }
+
+    public function getUserIdAttribute()
+    {
+        return $this->attributes['id'];
+    }
+
+    public function getSecondsLoggedAttribute()
+    {
+        return $this->timelogs()->sum('seconds_logged');
+    }
 }
